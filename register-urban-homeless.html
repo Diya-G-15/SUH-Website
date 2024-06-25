@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Homeless People Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><img src="logo.png" alt="SUH"
+                style="height: 40px; vertical-align: middle; border-radius: 50%;"></div>
+        <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Urban Homeless People Registration</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender" required>
+            <label for="contact">Contact Details:</label>
+            <input type="text" id="contact" name="contact" required>
+            <label for="gov-id">Government ID Details (if any):</label>
+            <input type="text" id="gov-id" name="gov-id">
+            <label for="medical">Medical Ailment Details (if any):</label>
+            <input type="text" id="medical" name="medical">
+            <label for="start-date">Starting Date:</label>
+            <input type="date" id="start-date" name="start-date" required>
+            <label for="end-date">Tentative Ending Date:</label>
+            <input type="date" id="end-date" name="end-date" required>
+            <div class="center-button">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

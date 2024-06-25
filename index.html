@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelter for Homeless People</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><img src="logo.png" alt="SUH"
+                style="height: 40px; vertical-align: middle; border-radius: 50%;"></div>
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1> Welcome to Shelter for Homeless People </h1>
+        <p><b> Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)</b></p>
+        <p>
+            <i>DAY-NULM</i></DAY-NULM> </b>aims at providing permanent shelter equipped with essential services to the
+            urban
+            homeless in a phased manner under the Scheme of Shelters for Urban Homeless (SUH).
+            Homeless persons include persons who do not have a house, either self-owned or rented,
+            but instead live and sleep on pavements, at parks, railway stations, bus stations and
+            places of worship, outside shops and factories, at construction sites, under bridges, in
+            hume pipes and other places under the open sky or places unfi t for human habitation.
+        </p>
+    </header>
+    <main>
+        <div class="image-container">
+            <img src="images/image1.png" class="active" alt="Image 1">
+            <img src="images/image2.png" alt="Image 2">
+            <img src="images/image3.png" alt="Image 3">
+            <img src="images/image4.png" alt="Image 4">
+            <img src="images/image5.png" alt="Image 5">
+        </div>
+        <p style="display: flex; justify-content: center; align-items: center;">Welcome to our website. Navigate using
+            the menu above to learn more about our services and how you can get involved.</p>
+        <footer>
+            <p>For more information or to get in touch with us, please visit our <a href="contact-us.html"
+                    style="color: #FFF;">Contact Us</a> page. You can also follow us on our social media channels for
+                updates and news.</p>
+            <p>© 2024 Shelter for Urban Homeless. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let images = document.querySelectorAll('.image-container img');
+            let index = 0;
+
+            function showImage() {
+                // Hide all images
+                images.forEach(function (img) {
+                    img.style.display = 'none';
+                });
+
+                // Display the current image
+                images[index].style.display = 'block';
+
+                // Increment index for next image
+                index++;
+                if (index >= images.length) {
+                    index = 0; // Reset index if it exceeds the number of images
+                }
+
+                // Call showImage function recursively after 1 second
+                setTimeout(showImage, 1000); // 1000 milliseconds = 1 second
+            }
+
+            // Start the slideshow
+            showImage();
+        });
+    </script>
+</body>
+
+</html>
