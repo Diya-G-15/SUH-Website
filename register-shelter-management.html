@@ -147,19 +147,19 @@
 
 
         <main class="main-content">
-<hr class="hr1">
-<hr class="hr2">
+             <hr class="hr1">
+             <hr class="hr2">
             <div class="form-section">
 
                 <h2 class="form-title">Shelter Management Agency Registration</h2>
                 <hr>
 
-<hr1>
-<hr2>
+                <hr1>
+                <hr2>
                 <div class="form-row">
                     <label for="state" class="form-label">State:</label>
                     
-<select id="state" class="form-select">
+                  <select id="state" class="form-select">
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                         <option value="Assam">Assam</option>
@@ -325,136 +325,122 @@
                         <option value="No">No</option>
                     </select>
                 </div>
-<br>
+                <br>
 
                 <table>
-  <tr>
-    <th>School/College Name</th>
-    <th>Address</th>
-    <th>Contact No.</th>
-  </tr>
-  <tr>
-    <td><label for="School/College Name" class="form-label"></label>
+                <tr>
+                <th>School/College Name</th>
+                <th>Address</th>
+                <th>Contact No.</th>
+                </tr>
+                <tr>
+                <td><label for="School/College Name" class="form-label"></label>
                     <input type="text" id="School/College Name" class="form-input" value="Sarvodaya Vidyalaya"></td>
-    <td><label for="Address" class="form-label"></label>
+                <td><label for="Address" class="form-label"></label>
                     <input type="text" id="Address" class="form-input" value="Rohini,Delhi"></td>
-    <td><label for="Contact No" class="form-label"></label>
+                <td><label for="Contact No" class="form-label"></label>
                     <input type="text" id="Contact No" class="form-input" value="9231212128"></td>
-  </tr>
-  <tr>
+                </tr>
+                <tr>
     
-</table>
+                </table>
 
                 <button class="form-button">Add</button>
 
                
                 <h2 class="form-title">Staff in Position for Shelter Management:</h2>
-<hr><br>
-<div id="formContainer">
-    <label for="staffNameInput">
-        Staff Name:
-    </label>
-    <input type="text" id="staffNameInput" 
-        placeholder="Enter Name...">
-    <label for="staffDesignationInput">
-        Staff Designation:
-    </label>
-    <input type="text" id="staffDesignationInput" 
-        placeholder="Enter Designation...">
-<br>
-    <label for="staffEmailInput">
-        Staff Email:
-    </label>
-    <input type="email" id="staffEmailInput" 
-        placeholder="Enter Email...">
-    <label for="staffContactInput">
-        Staff Contact:
-    </label>
-    <input type="text" id="staffContactInput" 
-        placeholder="Enter Contact...">
-    <br>
-    <button class="form-button" onclick="addData()">Add
-</button>
+                <hr><br>
+                <div id="formContainer">
+                <label for="staffNameInput"> Staff Name:  </label>
+                  <input type="text" id="staffNameInput"  placeholder="Enter Name...">
+                <label for="staffDesignationInput"> Staff Designation:   </label>
+                  <input type="text" id="staffDesignationInput"  placeholder="Enter Designation...">
+                <br>
+                <label for="staffEmailInput">  Staff Email:  </label>
+                  <input type="email" id="staffEmailInput" placeholder="Enter Email...">
+                <label for="staffContactInput"> Staff Contact:</label>
+                  <input type="text" id="staffContactInput" placeholder="Enter Contact...">
+                <br>
+                <button class="form-button" onclick="addData()">Add </button>
+                </div>
+                <br>
+                <table id="outputTable">
+                <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Action</th>
+                </tr>
+                </table>
 
-</div>
-<br>
-<table id="outputTable">
-    <tr>
-        <th>Name</th>
-        <th>Designation</th>
-        <th>Email</th>
-        <th>Contact</th>
-        <th>Action</th>
-    </tr>
-</table>
+                <script>
+                function addData() {
+                let staffName = document.getElementById("staffNameInput").value;
+                let staffDesignation = document.getElementById("staffDesignationInput").value;
+                let staffEmail = document.getElementById("staffEmailInput").value;
+                let staffContact = document.getElementById("staffContactInput").value;
 
-<script>
-    function addData() {
-        let staffName = document.getElementById("staffNameInput").value;
-        let staffDesignation = document.getElementById("staffDesignationInput").value;
-        let staffEmail = document.getElementById("staffEmailInput").value;
-        let staffContact = document.getElementById("staffContactInput").value;
+                let table = document.getElementById("outputTable");
+                let newRow = table.insertRow(1);
 
-        let table = document.getElementById("outputTable");
-        let newRow = table.insertRow(1);
+                newRow.insertCell(0).innerHTML = staffName;
+                newRow.insertCell(1).innerHTML = staffDesignation;
+                newRow.insertCell(2).innerHTML = staffEmail;
+                newRow.insertCell(3).innerHTML = staffContact;
+                newRow.insertCell(4).innerHTML =
+                '<button onclick="editData(this)">Edit</button>' +
+                '<button onclick="deleteData(this)">Delete</button>';
 
-        newRow.insertCell(0).innerHTML = staffName;
-        newRow.insertCell(1).innerHTML = staffDesignation;
-        newRow.insertCell(2).innerHTML = staffEmail;
-        newRow.insertCell(3).innerHTML = staffContact;
-        newRow.insertCell(4).innerHTML =
-            '<button onclick="editData(this)">Edit</button>' +
-            '<button onclick="deleteData(this)">Delete</button>';
+                clearInputs();
+                }
 
-        clearInputs();
-    }
+                function editData(button) {
 
-    function editData(button) {
+                let row = button.parentNode.parentNode;
 
-        let row = button.parentNode.parentNode;
+                let staffNameCell = row.cells[0];
+                let staffDesignationCell = row.cells[1];
+                let staffEmailCell = row.cells[2];
+                let staffContactCell = row.cells[3];
 
-        let staffNameCell = row.cells[0];
-        let staffDesignationCell = row.cells[1];
-        let staffEmailCell = row.cells[2];
-        let staffContactCell = row.cells[3];
+                let staffNameInput =
+                    prompt("Enter the updated staff name:",
+                        staffNameCell.innerHTML);
+               let staffDesignationInput =
+                    prompt("Enter the updated staff designation:",
+                        staffDesignationCell.innerHTML);
+               let staffEmailInput =
+                    prompt("Enter the updated staff email:",
+                        staffEmailCell.innerHTML);
+               let staffContactInput =
+                    prompt("Enter the updated staff contact:",
+                        staffContactCell.innerHTML
+               );
 
-        let staffNameInput =
-            prompt("Enter the updated staff name:",
-                staffNameCell.innerHTML);
-        let staffDesignationInput =
-            prompt("Enter the updated staff designation:",
-                staffDesignationCell.innerHTML);
-        let staffEmailInput =
-            prompt("Enter the updated staff email:",
-                staffEmailCell.innerHTML);
-        let staffContactInput =
-            prompt("Enter the updated staff contact:",
-                staffContactCell.innerHTML
-            );
+               staffNameCell.innerHTML = staffNameInput;
+               staffDesignationCell.innerHTML = staffDesignationInput;
+               staffEmailCell.innerHTML = staffEmailInput;
+               staffContactCell.innerHTML = staffContactInput;
+            }
 
-        staffNameCell.innerHTML = staffNameInput;
-        staffDesignationCell.innerHTML = staffDesignationInput;
-        staffEmailCell.innerHTML = staffEmailInput;
-        staffContactCell.innerHTML = staffContactInput;
-    }
+               function deleteData(button) {
 
-    function deleteData(button) {
+               let row = button.parentNode.parentNode;
 
-        let row = button.parentNode.parentNode;
+               row.parentNode.removeChild(row);
+              }
 
-        row.parentNode.removeChild(row);
-    }
+               function clearInputs() {
 
-    function clearInputs() {
-
-        document.getElementById("staffNameInput").value = "";
-        document.getElementById("staffDesignationInput").value = "";
-        document.getElementById("staffEmailInput").value = "";
-        document.getElementById("staffContactInput").value = "";
-    }
-</script>
+               document.getElementById("staffNameInput").value = "";
+               document.getElementById("staffDesignationInput").value = "";
+               document.getElementById("staffEmailInput").value = "";
+               document.getElementById("staffContactInput").value = "";
+               }
+                </script>
                 <h2 class="form-title">Detail of Inmates :</h2>
-<hr>
+                <hr>
 
                 <div class="form-column">
                     <label for="families-count" class="form-label">No. of Families:</label>
@@ -482,153 +468,153 @@
                 </div>
 
                 <h2 class="form-title">Infrastructure/amenities in the shelter:</h2>
-<hr>
+                <hr>
 
                 <div class="form-column">
                     <label for="ventilated-rooms" class="form-label">1. Well ventilated rooms/dormitories:</label>
-                    <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                    <label FOR="R1">Yes</label>
+                         <input TYPE="Radio" ID="R1" Value="Yes">
+                    <label FOR="R1">No</label>
+                         <input TYPE="Radio" ID="R1" Value="No">
                     </select>
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="adequate-space" class="form-label">2. Adequte space for each inmates (@50 Sq.ft.):</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                      <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                      <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="lighting" class="form-label">3. Lighting:</label>
-                     <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                    <LABEL FOR="R1">Yes</LABEL>
+                          <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                    <LABEL FOR="R1">No</LABEL>
+                          <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="fan-facilities" class="form-label">4. Fan facilities:</label>
-                     <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                    <LABEL FOR="R1">Yes</LABEL>
+                       <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                    <LABEL FOR="R1">No</LABEL>
+                       <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="kitchen-facilities" class="form-label">5. Kitchen with vessels and Gas connectivity:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                       <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                        <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="piped-water-supply" class="form-label">6. Piped water Supply:</label>
-                     <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                    <LABEL FOR="R1">Yes</LABEL>
+                        <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                    <LABEL FOR="R1">No</LABEL>
+                        <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="cloak-room" class="form-label">7. Cloak room /Personal Lockers:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                         <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                          <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                 <br>
 
                 <div class="form-column">
                     <label for="recreation-space" class="form-label">8. Space for recreation / Libarary / Others:</label>
                     <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                        <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                    <LABEL FOR="R1">No</LABEL>
+                        <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="toilet-bath-rooms" class="form-label">9. Toilet / Bath Rooms:</label>
                     <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                       <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                    <LABEL FOR="R1">No</LABEL>
+                       <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
                 <div class="form-column">
                     <label for="provision-women" class="form-label">10. Provision for Women:</label>
                     <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                         <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                    <LABEL FOR="R1">No</LABEL>
+                          <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                 <br>
 
                 <div class="form-column">
                     <label for="provision-disabled" class="form-label">11. Disabled:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                         <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                         <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="hot-water" class="form-label">12. Provision for Hot water- Geyser/ Solar device:</label>
                    <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                       <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                   <LABEL FOR="R1">No</LABEL>
+                       <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="purified-water" class="form-label">13. Purified water facility- ROs etc:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                        <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                        <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="cots-bunker-beds" class="form-label">14. Cots / Bunker Beds with shelter:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                            <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                            <INPUT TYPE="Radio" ID="R1" Value="No">
                     <input type="number" id="cots-bunker-beds-count" class="form-input" value="25">
                 </div>
-<br>
+                 <br>
 
                 <div class="form-column">
                     <label for="sleeping-mats" class="form-label">15. Sleeping mats / blankets:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                        <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                        <INPUT TYPE="Radio" ID="R1" Value="No">
                     <input type="number" id="sleeping-mats-count" class="form-input" value="25">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="washing-provisions" class="form-label">16. Washing Provisions - Blankets / Bed Sheets:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                       <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                       <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="display-board" class="form-label">17. Display Board at entrance of shelter:</label>
@@ -637,25 +623,25 @@
                         <option value="No">No</option>
                     </select>
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="cctv-camera" class="form-label">18. CCTV Camera Installed:</label>
                      <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                       <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                     <LABEL FOR="R1">No</LABEL>
+                       <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="fire-protection" class="form-label">19. Fire protection Measures:</label>
                    <LABEL FOR="R1">Yes</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="Yes">
-<LABEL FOR="R1">No</LABEL>
-<INPUT TYPE="Radio" ID="R1" Value="No">
+                     <INPUT TYPE="Radio" ID="R1" Value="Yes">
+                   <LABEL FOR="R1">No</LABEL>
+                       <INPUT TYPE="Radio" ID="R1" Value="No">
                 </div>
-<br>
+                 <br>
 
                 <div class="form-column">
                     <label for="food-arrangements" class="form-label">20. Food Arrangements:</label>
@@ -667,7 +653,7 @@
                 </div>
 
                 <h2 class="form-title">Health Care</h2>
-<hr>
+                <hr>
 
                 <div class="form-column">
                     <label for="first-aid-kit" class="form-label">★ First aid kit is with emergency medicines:</label>
@@ -676,38 +662,38 @@
                         <option value="No">No</option>
                     </select>
                 </div>
-<br>
+                <br>
                 <div class="form-column">
                     <label for="medical-checkups" class="form-label">★ Periodicity of Medical check ups:</label>
                     <select id="medical-checkups" class="form-select">
                         <option value="Monthly Once">Monthly Once</option>
                     </select>
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="children-enrolled" class="form-label">★ Number of children enrolled with-ICDS:</label>
                     <input type="number" id="children-enrolled" class="form-input" value="0">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="inmates-identity-cards" class="form-label">★ Number of inmates issued Indentity cards:</label>
                     <input type="number" id="inmates-identity-cards" class="form-input" value="0">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="regular-school" class="form-label">★ Regular School:</label>
                     <input type="number" id="regular-school" class="form-input" value="0">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="aadhar-cards" class="form-label">★ Aadhar Cards:</label>
                     <input type="number" id="aadhar-cards" class="form-input" value="0">
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="shelter-records" class="form-label">★ Records with Shelter:</label>
@@ -716,7 +702,7 @@
                         <option value="Manual">Manual</option>
                     </select>
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="inmates-enrollment" class="form-label">★ Profile of inmates / Enrollment:</label>
@@ -725,45 +711,43 @@
                         <option value="No">No</option>
                     </select>
                 </div>
-<br>
+                <br>
 
                 <h2 class="form-title">Register</h2>
-<hr>
+                <hr>
                 <div class="form-column">
                     <label for="staff-attendance" class="form-label">✿ Staff Attendance: <input type="checkbox"> Yes <input type="checkbox">No</label>
      
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="stock-asset-register" class="form-label">✿ Stock / Asset Register:
-<input type="checkbox"> Yes <input type="checkbox">No</label>
+                       <input type="checkbox"> Yes <input type="checkbox">No</label>
                     
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="books-of-accounts" class="form-label">✿ Books of Accounts:
-<input type="checkbox"> Yes <input type="checkbox">No</label>
+                          <input type="checkbox"> Yes <input type="checkbox">No</label>
                     
                 </div>
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="smc-minutes" class="form-label">✿ Minutes book of SMC:
-<input type="checkbox"> Yes <input type="checkbox">No</label>
+                       <input type="checkbox"> Yes <input type="checkbox">No</label>
                  </div>   
    
-<br>
+                 <br>
 
                 <div class="form-column">
                     <label for="shelter-management-committee" class="form-label">✿ Shelter Management Committee Constituted: <input type="checkbox"> Yes <input type="checkbox">No</label>
 
                 </div>
 
-
-
-<br>
+                <br>
 
                 <div class="form-column">
                     <label for="additional-info" class="form-label">✿ Additional (Services/entitlements) information if any: </label><br>
@@ -771,7 +755,7 @@
                 </div>
 
                 <h2 class="form-title">Upload Photo</h2>
-<hr>
+                <hr>
 
                 <div class="form-column">
                     <label for="upload-photo-1" class="form-label">Upload Photo 1:</label>
@@ -803,10 +787,10 @@
             </div>
         </main>
 
-        <footer class="footer">
-            <p>© 2024 Shelter for Urban Homeless. All rights reserved.</p>
+               <footer class="footer">
+                <p>© 2024 Shelter for Urban Homeless. All rights reserved.</p>
             
-        </footer>
-    </div>
-</body>
+               </footer>
+               </div>
+     </body>
 </html>
