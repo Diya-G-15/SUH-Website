@@ -1,44 +1,812 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shelter Management Agency Registration</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>DAY-NULM Shelter Profile</title>
+    <link rel="stylesheet" href="C:\Users\DELL\Downloads\Web Development\styles.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-name {
+            margin-left: 10px;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-label {
+            width: 150px;
+            text-align: right;
+        }
+
+        .form-input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-select {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            appearance: none;
+        }
+
+        .form-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+.button2 {background-color: #f44336;}
+
+.button3 {background-color: #555555;}
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+         td, th {
+         border: 2px solid black;
+         text-align: left;
+         padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+        hr { 
+	height: 4px; 
+	background-color: yellow; 
+	border: none; 
+	} 
+        .hr1 { 
+	height: 4px; 
+	background-color: orange; 
+	border: none; 
+	} 
+        .hr2 { 
+	height: 4px; 
+	background-color: green; 
+	border: none; 
+	} 
+
+
+    </style>
 </head>
-
 <body>
-    <nav>
-        <div class="logo"><img src="logo.png" alt="SUH"
-                style="height: 40px; vertical-align: middle; border-radius: 50%;"></div>
-        <ul>
-            <li><a href="index.html">Home</a> </li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="contact-us.html">Contact Us</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Shelter Management Agency Registration</h2>
-        <form>
-            <label for="name">Agency Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
-            <label for="contact">Contact Details:</label>
-            <input type="text" id="contact" name="contact" required>
-            <div class="button-container">
-                <a href="register-urban-homeless.html"><button type="button">Register a Homeless Person</button></a>
-                <a href="register-health-camp.html"><button type="button">Organize Health Camps</button></a>
-                <a href="register-welfare-scheme.html"><button type="button">Enroll in Welfare Scheme</button></a>
+    <div class="container">
+        <header>
+            <img src="https://nulm.gov.in/images/logo.png" alt="DAY-NULM Logo" class="logo" width="200">
+            <img src="C:/Users/DELL/Downloads/Web Development/logo.png" width="100">
+            <div class="user-info">
+                <span class="user-name">You are Logged In as: New User</span> &nbsp
+                <a href="C:\Users\DELL\Downloads\Web Development\login.html" class="form-button button2">Log Out</a>
             </div>
-            <div class="center-button">
-                <button type="submit">Register</button>
-            </div>
-        </form>
-    </main>
-</body>
+        </header>
 
+
+        <main class="main-content">
+<hr class="hr1">
+<hr class="hr2">
+            <div class="form-section">
+
+                <h2 class="form-title">Shelter Management Agency Registration</h2>
+                <hr>
+
+<hr1>
+<hr2>
+                <div class="form-row">
+                    <label for="state" class="form-label">State:</label>
+                    
+<select id="state" class="form-select">
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman & Nicobar (UT)">Andaman & Nicobar (UT)</option>
+                        <option value="Chandigarh (UT)">Chandigarh (UT)</option>
+                        <option value="Dadra & Nagar Haveli and Daman & Diu (UT)">Dadra & Nagar Haveli and Daman & Diu (UT)</option>
+                        <option value="Delhi [National Capital Territory (NCT)]">Delhi [National Capital Territory (NCT)]</option>
+                        <option value="Jammu & Kashmir (UT)">Jammu & Kashmir (UT)</option>
+                        <option value="Ladakh (UT)">Ladakh (UT)</option>
+                        <option value="Lakshadweep (UT)">Lakshadweep (UT)</option>
+                        <option value="Puducherry (UT)">Puducherry (UT)</option>
+
+
+
+                    </select>
+
+                </div>
+
+                <div class="form-row">
+                    <label for="suh-profile-id" class="form-label">SUH Profile ID:</label>
+                    <input type="text" id="suh-profile-id" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="ulb" class="form-label">ULB:</label>
+                    <input type="text" id="ulb" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="shelter-name" class="form-label">Name of the Shelter:</label>
+                    <input type="text" id="shelter-name" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="city-name" class="form-label">Name of the City:</label>
+                    <input type="text" id="city-name" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="street" class="form-label">Street:</label>
+                    <input type="text" id="street" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="landmark" class="form-label">Landmark:</label>
+                    <input type="text" id="landmark" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="ward-no" class="form-label">Ward No/Name:</label>
+                    <select id="ward-no" class="form-select">
+                        <option value="Select Ward">Select Ward</option>
+                        <option value="Ward 1">Ward 1</option>
+                        <option value="Ward 2">Ward 2</option>
+                        <option value="Ward 3">Ward 3</option>
+                        <option value="Ward 4">Ward 4</option>
+                        <option value="Ward 5">Ward 5</option>
+                        <option value="Ward 6">Ward 6</option>
+                        <option value="Ward 7">Ward 7</option>
+                        <option value="Ward 8">Ward 8</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="shelter-type" class="form-label">Shelter Proposal Type:</label>
+                    <select id="shelter-type" class="form-select">
+                        <option value="O & M Only">O & M Only</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Renovation">Renovation</option>
+                        <option value="Expansion">Expansion</option>
+                        <option value="Maintenance">Maintenance</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="sma-name" class="form-label">Name of the SMA:</label>
+                    <input type="text" id="sma-name" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="category" class="form-label">Category:</label>
+                    <select id="category" class="form-select">
+                        <option value="General">General</option>
+                        <option value="SC/ST">SC/ST</option>
+                        <option value="OBC">OBC</option>
+
+
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="operational-date" class="form-label">Date of Operational:</label>
+                    <input type="date" id="operational-date" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="funding-source" class="form-label">Funding Source:</label>
+                    <select id="funding-source" class="form-select">
+                        <option value="NULM">NULM</option>
+                        <option value="Centrally Sponsored Schemes">Centrally Sponsored Schemes</option>
+                        <option value="Corporate Social Responsibility (CSR)">Corporate Social Responsibility (CSR)</option>
+                       <option value="State government grants">State government grants</option>
+                        <option value="Private donations">Private donations</option>
+                        <option value="Social Impact Bonds (SIBs)">Social Impact Bonds (SIBs)</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="capacity" class="form-label">Capacity:</label>
+                    <input type="number" id="capacity" class="form-input" value="30">
+                </div>
+
+                <div class="form-row">
+                    <label for="inmates-count" class="form-label">No. of inmates in Shelter:</label>
+                    <input type="number" id="inmates-count" class="form-input" value="25">
+                </div>
+
+                <div class="form-row">
+                    <label for="shelter-status" class="checkbox-label">Bulding Shelter Status:</label>
+                    <select id="shelter-status" class="checkbox-select">
+                        <option value="Own">Own</option>
+                        <option value="Rental">Rental</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="shelter-management" class="checkbox-label">Shelter Management Agency in Position:</label>
+                    <select id="shelter-management" class="checkbox-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="school-college-tagged" class="form-label">School/Colleges Tagged:</label>
+                    <select id="school-college-tagged" class="form-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+<br>
+
+                <table>
+  <tr>
+    <th>School/College Name</th>
+    <th>Address</th>
+    <th>Contact No.</th>
+  </tr>
+  <tr>
+    <td><label for="School/College Name" class="form-label"></label>
+                    <input type="text" id="School/College Name" class="form-input" value="Sarvodaya Vidyalaya"></td>
+    <td><label for="Address" class="form-label"></label>
+                    <input type="text" id="Address" class="form-input" value="Rohini,Delhi"></td>
+    <td><label for="Contact No" class="form-label"></label>
+                    <input type="text" id="Contact No" class="form-input" value="9231212128"></td>
+  </tr>
+  <tr>
+    
+</table>
+
+                <button class="form-button">Add</button>
+
+               
+                <h2 class="form-title">Staff in Position for Shelter Management:</h2>
+<hr><br>
+<div id="formContainer">
+    <label for="staffNameInput">
+        Staff Name:
+    </label>
+    <input type="text" id="staffNameInput" 
+        placeholder="Enter Name...">
+    <label for="staffDesignationInput">
+        Staff Designation:
+    </label>
+    <input type="text" id="staffDesignationInput" 
+        placeholder="Enter Designation...">
+<br>
+    <label for="staffEmailInput">
+        Staff Email:
+    </label>
+    <input type="email" id="staffEmailInput" 
+        placeholder="Enter Email...">
+    <label for="staffContactInput">
+        Staff Contact:
+    </label>
+    <input type="text" id="staffContactInput" 
+        placeholder="Enter Contact...">
+    <br>
+    <button class="form-button" onclick="addData()">Add
+</button>
+
+</div>
+<br>
+<table id="outputTable">
+    <tr>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+<script>
+    function addData() {
+        let staffName = document.getElementById("staffNameInput").value;
+        let staffDesignation = document.getElementById("staffDesignationInput").value;
+        let staffEmail = document.getElementById("staffEmailInput").value;
+        let staffContact = document.getElementById("staffContactInput").value;
+
+        let table = document.getElementById("outputTable");
+        let newRow = table.insertRow(1);
+
+        newRow.insertCell(0).innerHTML = staffName;
+        newRow.insertCell(1).innerHTML = staffDesignation;
+        newRow.insertCell(2).innerHTML = staffEmail;
+        newRow.insertCell(3).innerHTML = staffContact;
+        newRow.insertCell(4).innerHTML =
+            '<button onclick="editData(this)">Edit</button>' +
+            '<button onclick="deleteData(this)">Delete</button>';
+
+        clearInputs();
+    }
+
+    function editData(button) {
+
+        let row = button.parentNode.parentNode;
+
+        let staffNameCell = row.cells[0];
+        let staffDesignationCell = row.cells[1];
+        let staffEmailCell = row.cells[2];
+        let staffContactCell = row.cells[3];
+
+        let staffNameInput =
+            prompt("Enter the updated staff name:",
+                staffNameCell.innerHTML);
+        let staffDesignationInput =
+            prompt("Enter the updated staff designation:",
+                staffDesignationCell.innerHTML);
+        let staffEmailInput =
+            prompt("Enter the updated staff email:",
+                staffEmailCell.innerHTML);
+        let staffContactInput =
+            prompt("Enter the updated staff contact:",
+                staffContactCell.innerHTML
+            );
+
+        staffNameCell.innerHTML = staffNameInput;
+        staffDesignationCell.innerHTML = staffDesignationInput;
+        staffEmailCell.innerHTML = staffEmailInput;
+        staffContactCell.innerHTML = staffContactInput;
+    }
+
+    function deleteData(button) {
+
+        let row = button.parentNode.parentNode;
+
+        row.parentNode.removeChild(row);
+    }
+
+    function clearInputs() {
+
+        document.getElementById("staffNameInput").value = "";
+        document.getElementById("staffDesignationInput").value = "";
+        document.getElementById("staffEmailInput").value = "";
+        document.getElementById("staffContactInput").value = "";
+    }
+</script>
+                <h2 class="form-title">Detail of Inmates :</h2>
+<hr>
+
+                <div class="form-column">
+                    <label for="families-count" class="form-label">No. of Families:</label>
+                    <input type="number" id="families-count" class="form-input" value="0">
+                </div>
+
+                <div class="form-column">
+                    <label for="men-count" class="form-label">No. of Men:</label>
+                    <input type="number" id="men-count" class="form-input" value="10">
+                </div>
+
+                <div class="form-column">
+                    <label for="women-count" class="form-label">No. of Women:</label>
+                    <input type="number" id="women-count" class="form-input" value="15">
+                </div>
+
+                <div class="form-column">
+                    <label for="children-count" class="form-label">No. of Children:</label>
+                    <input type="number" id="children-count" class="form-input" value="0">
+                </div>
+
+                <div class="form-column">
+                    <label for="other-inmates" class="form-label">Other if any:</label>
+                    <input type="text" id="other-inmates" class="form-input" value="0">
+                </div>
+
+                <h2 class="form-title">Infrastructure/amenities in the shelter:</h2>
+<hr>
+
+                <div class="form-column">
+                    <label for="ventilated-rooms" class="form-label">1. Well ventilated rooms/dormitories:</label>
+                    <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                    </select>
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="adequate-space" class="form-label">2. Adequte space for each inmates (@50 Sq.ft.):</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="lighting" class="form-label">3. Lighting:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="fan-facilities" class="form-label">4. Fan facilities:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="kitchen-facilities" class="form-label">5. Kitchen with vessels and Gas connectivity:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="piped-water-supply" class="form-label">6. Piped water Supply:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="cloak-room" class="form-label">7. Cloak room /Personal Lockers:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="recreation-space" class="form-label">8. Space for recreation / Libarary / Others:</label>
+                    <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="toilet-bath-rooms" class="form-label">9. Toilet / Bath Rooms:</label>
+                    <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+                <div class="form-column">
+                    <label for="provision-women" class="form-label">10. Provision for Women:</label>
+                    <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="provision-disabled" class="form-label">11. Disabled:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="hot-water" class="form-label">12. Provision for Hot water- Geyser/ Solar device:</label>
+                   <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="purified-water" class="form-label">13. Purified water facility- ROs etc:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="cots-bunker-beds" class="form-label">14. Cots / Bunker Beds with shelter:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                    <input type="number" id="cots-bunker-beds-count" class="form-input" value="25">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="sleeping-mats" class="form-label">15. Sleeping mats / blankets:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                    <input type="number" id="sleeping-mats-count" class="form-input" value="25">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="washing-provisions" class="form-label">16. Washing Provisions - Blankets / Bed Sheets:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="display-board" class="form-label">17. Display Board at entrance of shelter:</label>
+                    <select id="display-board" class="form-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="cctv-camera" class="form-label">18. CCTV Camera Installed:</label>
+                     <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="fire-protection" class="form-label">19. Fire protection Measures:</label>
+                   <LABEL FOR="R1">Yes</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="Yes">
+<LABEL FOR="R1">No</LABEL>
+<INPUT TYPE="Radio" ID="R1" Value="No">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="food-arrangements" class="form-label">20. Food Arrangements:</label>
+                    <select id="food-arrangements" class="form-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <input type="text" id="food-arrangements-details" class="form-input" value="Provided">
+                </div>
+
+                <h2 class="form-title">Health Care</h2>
+<hr>
+
+                <div class="form-column">
+                    <label for="first-aid-kit" class="form-label">★ First aid kit is with emergency medicines:</label>
+                    <select id="first-aid-kit" class="form-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+<br>
+                <div class="form-column">
+                    <label for="medical-checkups" class="form-label">★ Periodicity of Medical check ups:</label>
+                    <select id="medical-checkups" class="form-select">
+                        <option value="Monthly Once">Monthly Once</option>
+                    </select>
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="children-enrolled" class="form-label">★ Number of children enrolled with-ICDS:</label>
+                    <input type="number" id="children-enrolled" class="form-input" value="0">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="inmates-identity-cards" class="form-label">★ Number of inmates issued Indentity cards:</label>
+                    <input type="number" id="inmates-identity-cards" class="form-input" value="0">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="regular-school" class="form-label">★ Regular School:</label>
+                    <input type="number" id="regular-school" class="form-input" value="0">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="aadhar-cards" class="form-label">★ Aadhar Cards:</label>
+                    <input type="number" id="aadhar-cards" class="form-input" value="0">
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="shelter-records" class="form-label">★ Records with Shelter:</label>
+                    <select id="shelter-records" class="form-select">
+                        <option value="Computerised">Computerised</option>
+                        <option value="Manual">Manual</option>
+                    </select>
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="inmates-enrollment" class="form-label">★ Profile of inmates / Enrollment:</label>
+                    <select id="inmates-enrollment" class="form-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+<br>
+
+                <h2 class="form-title">Register</h2>
+<hr>
+                <div class="form-column">
+                    <label for="staff-attendance" class="form-label">✿ Staff Attendance: <input type="checkbox"> Yes <input type="checkbox">No</label>
+     
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="stock-asset-register" class="form-label">✿ Stock / Asset Register:
+<input type="checkbox"> Yes <input type="checkbox">No</label>
+                    
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="books-of-accounts" class="form-label">✿ Books of Accounts:
+<input type="checkbox"> Yes <input type="checkbox">No</label>
+                    
+                </div>
+<br>
+
+                <div class="form-column">
+                    <label for="smc-minutes" class="form-label">✿ Minutes book of SMC:
+<input type="checkbox"> Yes <input type="checkbox">No</label>
+                 </div>   
+   
+<br>
+
+                <div class="form-column">
+                    <label for="shelter-management-committee" class="form-label">✿ Shelter Management Committee Constituted: <input type="checkbox"> Yes <input type="checkbox">No</label>
+
+                </div>
+
+
+
+<br>
+
+                <div class="form-column">
+                    <label for="additional-info" class="form-label">✿ Additional (Services/entitlements) information if any: </label><br>
+                    <textarea id="additional-info" class="form-input">Nil</textarea>
+                </div>
+
+                <h2 class="form-title">Upload Photo</h2>
+<hr>
+
+                <div class="form-column">
+                    <label for="upload-photo-1" class="form-label">Upload Photo 1:</label>
+                    <input type="file" id="upload-photo-1" class="form-input">
+                </div>
+
+                <div class="form-column">
+                    <label for="upload-photo-2" class="form-label">Upload Photo 2:</label>
+                    <input type="file" id="upload-photo-2" class="form-input">
+                </div>
+
+                <h2 class="form-title">Shelter Photographs</h2>
+
+                <div class="form-column">
+                    <label for="upload-photo-3" class="form-label">Upload Photo 3:</label>
+                    <input type="file" id="upload-photo-3" class="form-input">
+                </div>
+
+                <div class="form-column">
+                    <label for="upload-photo-4" class="form-label">Upload Photo 4:</label>
+                    <input type="file" id="upload-photo-4" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <a href="C:\Users\DELL\Downloads\Web Development\login.html" class="form-button button2">Back</a>
+                    <button class="form-button">Register</button>
+                    <button class="form-button button3" onclick="window.print()">Print</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2024 Shelter for Urban Homeless. All rights reserved.</p>
+            
+        </footer>
+    </div>
+</body>
 </html>
