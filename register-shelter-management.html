@@ -5,134 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAY-NULM Shelter Profile</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .logo {
-            height: 40px;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-        }
-
-        .user-name {
-            margin-left: 10px;
-        }
-
-        .main-content {
-            padding: 20px 0;
-        }
-
-        .form-section {
-            margin-bottom: 20px;
-        }
-
-        .form-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .form-label {
-            width: 150px;
-            text-align: right;
-        }
-
-        .form-input {
-            width: 200px;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .form-select {
-            width: 200px;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            appearance: none;
-        }
-
-        .form-button {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-        }
-.button2 {background-color: #f44336;}
-
-.button3 {background-color: #555555;}
-
-        .footer {
-            text-align: center;
-            padding: 10px 0;
-            border-top: 1px solid #ccc;
-        }
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-         td, th {
-         border: 2px solid black;
-         text-align: left;
-         padding: 8px;
-        }
-
-        tr:nth-child(even) {
-        background-color: #dddddd;
-        }
-        hr { 
-	height: 4px; 
-	background-color: yellow; 
-	border: none; 
-	} 
-        .hr1 { 
-	height: 4px; 
-	background-color: orange; 
-	border: none; 
-	} 
-        .hr2 { 
-	height: 4px; 
-	background-color: green; 
-	border: none; 
-	} 
-
-
-    </style>
+    
 </head>
 <body>
     <div class="container">
@@ -160,6 +33,7 @@
                     <label for="state" class="form-label">State:</label>
                     
                   <select id="state" class="form-select">
+                    <option value="Select">Select</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                         <option value="Assam">Assam</option>
@@ -334,18 +208,18 @@
                 <th>Contact No.</th>
                 </tr>
                 <tr>
-                <td><label for="School/College Name" class="form-label"></label>
-                    <input type="text" id="School/College Name" class="form-input" value="Sarvodaya Vidyalaya"></td>
-                <td><label for="Address" class="form-label"></label>
-                    <input type="text" id="Address" class="form-input" value="Rohini,Delhi"></td>
-                <td><label for="Contact No" class="form-label"></label>
-                    <input type="text" id="Contact No" class="form-input" value="9231212128"></td>
+                <td><label for="School/College Name" class="form-label" style="max-width: 200px;"></label>
+                    <input type="text" id="School/College Name" class="form-input" value="Sarvodaya Vidyalaya" style="max-width: 200px;"></td>
+                <td><label for="Address" class="form-label" style="max-width: 200px;"></label>
+                    <input type="text" id="Address" class="form-input" value="Rohini,Delhi" style="max-width: 200px;"></td>
+                <td><label for="Contact No" class="form-label" style="max-width: 200px;"></label>
+                    <input type="text" id="Contact No" class="form-input" value="9231212128" style="max-width: 200px;"></td>
                 </tr>
                 <tr>
     
                 </table>
 
-                <button class="form-button">Add</button>
+                <button class="form-button" style="margin-top: 10px;">Add</button>
 
                
                 <h2 class="form-title">Staff in Position for Shelter Management:</h2>
@@ -779,7 +653,7 @@
                     <input type="file" id="upload-photo-4" class="form-input">
                 </div>
 
-                <div class="form-row">
+                <div class="form-row" style="justify-content: space-between; margin-top: 20px;">
                     <a href="C:\Users\DELL\Downloads\Web Development\login.html" class="form-button button2">Back</a>
                     <button class="form-button">Register</button>
                     <button class="form-button button3" onclick="window.print()">Print</button>

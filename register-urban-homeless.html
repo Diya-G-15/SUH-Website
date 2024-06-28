@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Homeless People Registration</title>
+    <title>Add Beneficiary</title>
     <link rel="stylesheet" href="styles.css">
+   
 </head>
 
 <body>
@@ -20,30 +21,147 @@
             <li><a href="register.html">Register</a></li>
         </ul>
     </nav>
-    <main>
-        <h2>Urban Homeless People Registration</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
-            <label for="gender">Gender:</label>
-            <input type="text" id="gender" name="gender" required>
-            <label for="contact">Contact Details:</label>
-            <input type="text" id="contact" name="contact" required>
-            <label for="gov-id">Government ID Details (if any):</label>
-            <input type="text" id="gov-id" name="gov-id">
-            <label for="medical">Medical Ailment Details (if any):</label>
-            <input type="text" id="medical" name="medical">
-            <label for="start-date">Starting Date:</label>
-            <input type="date" id="start-date" name="start-date" required>
-            <label for="end-date">Tentative Ending Date:</label>
-            <input type="date" id="end-date" name="end-date" required>
-            <div class="center-button">
-                <button type="submit">Register</button>
-            </div>
-        </form>
-    </main>
+    <div class="container">
+        <h1>Urban Homeless People Registration</h1>
+
+        <div class="form-section">
+            <h2>Register Beneficiary</h2>
+            <form>
+                <div class="form-group">
+                    <label for="firstName">Name</label>
+                    <input type="text" id="firstName" placeholder="First Name">
+                    <input type="text" id="lastName" placeholder="Last Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" id="phoneNumber" placeholder="PhoneNumber">
+                </div>
+
+                <div class="form-group">
+                    <label for="aadharCardNo">Aadharcard No(Any Government Id)</label>
+                    <input type="text" id="aadharCardNo" placeholder="AadharcardNo">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                        <option>Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Age">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Birth Date</label>
+                    <input type="date" id="birthDate" placeholder="Birth Date">
+                </div>
+
+                <div class="form-group">
+                    <label for="addressLine1">Address Line</label>
+                    <input type="text" id="addressLine1" placeholder="Address Line ">
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" placeholder="City">
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" id="state" placeholder="State">
+                </div>
+
+                <div class="form-group">
+                    <label for="caste">Caste</label>
+                    <input type="text" id="caste" placeholder="Caste">
+                </div>
+
+                <div class="form-group">
+                    <label for="minority">Under Minority?</label>
+                    <input type="radio" id="minorityYes" name="minority" value="Yes"> Yes
+                    <input type="radio" id="minorityNo" name="minority" value="No"> No
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Education</label>
+                    <select id="education">
+                        <option>Please Select Education</option>
+                        <option>Not Educated</option>
+                        <option>High School</option>
+                        <option>Secondary</option>
+                        <option>Graduate</option>
+                        <option>Diploma Holder</option>
+                        <option>Post Graduate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="disabilityType">Disability Type(If any)</label>
+                    <input type="text" id="disabilityType" placeholder="Enter type of Disability">
+                </div>
+
+                <div class="form-group">
+                    <label for="remarks">Remarks</label>
+                    <input type="text" id="remarks" placeholder="Remarks">
+                </div>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h2>Add Checkin Details</h2>
+            <form>
+                <div class="form-group">
+                    <label for="checkInTime">Check In Time</label>
+                    <input type="datetime-local" id="checkInTime" value="2024-06-27T00:00">
+                </div>
+
+                <div class="form-group">
+                    <label for="reasonsForStay">Reasons for stay</label>
+                    <input type="text" id="reasonsForStay" placeholder="Please enter Reasons for stay">
+                </div>
+
+                <div class="form-group">
+                    <label for="lockerProvided">Locker Provided</label>
+                    <input type="radio" id="lockerProvidedYes" name="lockerProvided" value="Yes"> Yes
+                    <input type="radio" id="lockerProvidedNo" name="lockerProvided" value="No"> No
+                </div>
+
+                <div class="form-group">
+                    <label for="room">Room Allocated</label>
+                    <input type="text" id="room" placeholder="room">
+                </div>
+
+                <div class="form-group">
+                    <label for="bed">Bed Allocated</label>
+                    <input type="text" id="bed" placeholder="Please enter bed">
+                </div>
+
+                <div class="form-group">
+                    <label for="userFee">User Fee (INR) If Collected</label>
+                    <input type="text" id="userFee" placeholder="Please enter User Fee (If Collected)">
+                </div>
+
+                <div class="form-group">
+                    <label for="reasonForFeeCollection">Reason for Fee Collection</label>
+                    <input type="text" id="reasonForFeeCollection" placeholder="Please enter Reason for fee Collection">
+                </div>
+
+                <div class="form-group">
+                    <label for="remarksCheckin">Remarks</label>
+                    <input type="text" id="remarksCheckin" placeholder="Please enter Remarks">
+                </div>
+
+                <button type="button" onclick="previewForm()">Preview</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

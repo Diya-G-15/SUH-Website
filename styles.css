@@ -25,7 +25,7 @@ h6 {
 
 /* Navbar Styles */
 nav {
-    background-color: #333;
+    background-color: #263749;
     color: #fff;
     padding: 2em;
     position: sticky;
@@ -62,7 +62,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: #4c5386;
     border-radius: 5px;
 }
 
@@ -82,6 +82,122 @@ nav ul li a:hover {
 
 .image-container .active {
     display: block;
+}
+
+
+/* Register Shelter Management */
+.container {
+    max-width: 800px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    height: 40px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    margin-left: 10px;
+}
+
+.main-content {
+    padding: 20px 0;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    width: 250px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.form-input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-select {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+}
+
+.form-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+.button2 {background-color: #f44336;}
+
+.button3 {background-color: #555555;}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+ td, th {
+ border: 2px solid black;
+ text-align: left;
+ padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+hr { 
+height: 4px; 
+background-color: yellow; 
+border: none; 
+} 
+.hr1 { 
+height: 4px; 
+background-color: orange; 
+border: none; 
+} 
+.hr2 { 
+height: 4px; 
+background-color: green; 
+border: none; 
 }
 
 /* Form Styles */
@@ -338,6 +454,53 @@ main.register-page {
 
 .center-button button:hover {
     background-color: #555;
+}
+ 
+
+/* Register Homeless */
+.container {
+    width: 70%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-section {
+    margin: 20px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 30%;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="datetime-local"],
+.form-group select {
+    width: 60%;
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="radio"] {
+    margin-right: 5px;
 }
 
 /* Responsive Styles */
